@@ -166,7 +166,7 @@ export default function Shipment() {
 
                         <div className="mt-4">
                             <p className="text-sm text-zinc-500">
-                                We recommend over-estimating the weight of your package so that it doesn't get returned back to you for underpayment.
+                                We recommend over-estimating the weight of your package so that it doesn&apos;t get returned back to you for underpayment.
                             </p>
                         </div>
 
