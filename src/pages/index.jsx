@@ -62,7 +62,7 @@ export default function Shipment() {
 
                         <div className="mt-8">
                             <p className="text-sm font-bold"> Select a Carrier</p>
-                            <div className="w-full flex mt-2">
+                            <div className="w-full flex flex-wrap mt-2">
                                 <CarrierCard imageUrl={Fedex} />
                                 <CarrierCard imageUrl={Frame} />
                                 <CarrierCard imageUrl={Dhl} />
@@ -72,7 +72,7 @@ export default function Shipment() {
                         </div>
 
                         <div className="mt-8">
-                            <div className="grid grid-cols-3 divide-x-[2px]">
+                            <div className="md:grid grid-cols-3 md:divide-x-[2px]">
                                 <div className="pr-2">
                                     <p className="text-sm font-bold"> Define the Package</p>
                                     <div className="w-full relative border rounded-md px-2 py-1 flex">
@@ -89,11 +89,11 @@ export default function Shipment() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="px-2">
+                                <div className="pr-2 md:px-2 ">
                                     <p className="text-sm font-bold"> From </p>
                                     <ComboBoxAuto data={data} replaceText={"Search Pickup Destination"}></ComboBoxAuto>
                                 </div>
-                                <div className="px-2">
+                                <div className="pr-2 md:px-2">
                                     <p className="text-sm font-bold"> To </p>
                                     <ComboBoxAuto data={data} replaceText={"Search Delivery Destination"}></ComboBoxAuto>
                                 </div>
@@ -143,12 +143,12 @@ export default function Shipment() {
                         </div>
                         <div className="mt-4">
                             <p className="font-bold text-zinc-600">Demensions</p>
-                            <div className="mt-2 w-full flex justify-between">
-                                <input className="border px-2 py-1 block w-40" placeholder="Length"></input>
-                                <span className="text-sm my-auto">X</span>
-                                <input className="border px-2 py-1 block w-40" placeholder="Width"></input>
-                                <span className="text-sm my-auto">X</span>
-                                <input className="border px-2 py-1 block w-40" placeholder="Height"></input>
+                            <div className="mt-2 w-full md:flex justify-between">
+                                <input className="border my-1 px-2 py-1 block w-full md:w-40" placeholder="Length"></input>
+                                <span className="text-sm my-auto hidden md:block">X</span>
+                                <input className="border my-1 px-2 py-1 block w-full md:w-40" placeholder="Width"></input>
+                                <span className="text-sm my-auto hidden md:block">X</span>
+                                <input className="border my-1 px-2 py-1 block w-full md:w-40" placeholder="Height"></input>
                             </div>
                         </div>
 
@@ -191,7 +191,7 @@ export default function Shipment() {
 
 export function CarrierCard({imageUrl}){
     return (<>
-        <div className="mr-2 px-3 rounded-md border flex cursor-pointer">
+        <div className="mr-2 mt-2 md:mt-0 px-3 rounded-md border h-12 flex cursor-pointer">
             <Image className="my-auto" alt="image" src={imageUrl} width={50}></Image>
         </div>
     </>)

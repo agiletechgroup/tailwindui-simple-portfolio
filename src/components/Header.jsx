@@ -2,13 +2,14 @@ import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Popover, Transition } from '@headlessui/react'
+import { Disclosure, Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
 import bitPostage from '@/images/logos/bit-postage.svg'
 import MenuButton from './MenuButton'
+import DisclosureButton from './DisclosureButton'
 
 function CloseIcon(props) {
   return (
@@ -123,11 +124,12 @@ function MobileNavigation(props) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <MobileNavItem href="/about">Services</MobileNavItem>
-                <MobileNavItem href="/articles">CSV Import</MobileNavItem>
-                <MobileNavItem href="/projects">Tracking</MobileNavItem>
-                <MobileNavItem href="/speaking">Package Pickup</MobileNavItem>
-                <MobileNavItem href="/uses">FAQ</MobileNavItem>
+              {/* <MenuButton title={"Services"}></MenuButton> */}
+              <DisclosureButton title={"Services"}></DisclosureButton>
+              <NavItem href="/#">CSV Import</NavItem>
+              <NavItem href="/#">Tracking</NavItem>
+              <NavItem href="/#">Package Pickup</NavItem>
+              <NavItem href="/#">FAQ</NavItem>
               </ul>
             </nav>
           </Popover.Panel>
